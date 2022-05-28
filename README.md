@@ -25,7 +25,7 @@ the other.
 
 We’re assuming a macOS development environment for these instructions. If you’re
 on Linux, these instructions will work modulo package installation. On Windows,
-you can get the gist of what’s needed from reading the `start-shadow`.
+you can get the gist of what’s needed from reading the `start-shadow` script.
 
 ### Requirements
 
