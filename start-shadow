@@ -13,10 +13,13 @@ if [[ -z $(which java) ]]; then
 fi
 
 if [[ ! -d node_modules ]]; then
+  npm init -y
   npm install --save-dev shadow-cljs
   npm install --save-dev react@17.0.2
   npm install --save-dev react-dom@17.0.2
-  npm install -g npx
+  if [[ -z $(which npx) ]]; then
+    npm install -g npx
+  fi
 fi
 
 exec npx shadow-cljs watch app
