@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [[ -z $(which npm) ]]; then
+  echo "!! NPM not installed"
+  echo "e.g. brew install npm"
+  exit 1
+fi
+
+if [[ -z $(which java) ]]; then
+  echo "!! Java not installed"
+  echo "e.g. brew install openjdk"
+  exit 1
+fi
+
+if [[ ! -d node_modules ]]; then
+  npm install --save-dev shadow-cljs
+  npm install --save-dev react@17.0.2
+  npm install --save-dev react-dom@17.0.2
+  npm install -g npx
+fi
+
+exec npx shadow-cljs watch app
